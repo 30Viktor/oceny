@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+   
+
+</head>
+<body >
+
+    <script>
+      function pp(){
+            var punkty = parseFloat(document.getElementById('punkty').value);
+            var ocenaElement = document.getElementById('ocena');
+            if (isNaN(punkty)||punkty<0||punkty>100){
+                ocenaElement.innerText = 'liczba punktów musi być od 0 do 100';
+return;
+            }
+            let ocena = '';
+
+            if (punkty === 100){
+                ocena = 'celująca 6';
+            }else if (punkty >=90){
+                ocena='bardzo dobra 5';
+            }else if (punkty >=75){
+                ocena='dobra 4';
+            }else if (punkty >=50){
+                ocena='dostateczna 3';
+            }else if (punkty >=30){
+                ocena='dopuszczająca 2';
+            }else {
+                ocena='Niedostateczna 1';
+            }
+            ocenaElement.innerText = ocena;
+        }
+       
+       
+       
+       
+           </script>
+           <div id="main">
+    <h2>Sprawdzian z matematykki.</h2>
+    <div id="style">
+        <input type="text" placeholder="Wpisz ocenę" id="punkty">
+    <button type="submit" onclick="pp()">Sprawdź</button>
+    
+</div>
+</div>
+<div id="wynik">
+    <p style="font-size: 20px; text-align: center;" id="ocena">Ocena</p>
+</div>
+</body>
+</html>
